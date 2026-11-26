@@ -31,7 +31,7 @@ estimacion_rendimiento_ha decimal(10,2)
 ) engine=InnoDB;
 
 create table if not exists parcelas(
-id_parcelas int auto_increment primary key,
+id_parcela int auto_increment primary key,
 id_cultivo int,
 nombre_parcela varchar(100) not null,
 superficie_ha decimal(8,2) not null,
@@ -70,7 +70,7 @@ fecha_trabajo date not null,
 horas_trabajadas decimal(5,2) not null,
 tarifa_hora decimal(8,2) not null,
 costo_total decimal(10,2) not null,
-foreign key (id_parcela) references parcelas(id_parcelas) on delete cascade on update cascade,
+foreign key (id_parcela) references parcelas(id_parcela) on delete cascade on update cascade,
 foreign key (id_usuario) references usuarios(id_usuario) on delete set null on update cascade
 ) engine=InnoDB;
 
